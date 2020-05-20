@@ -1,0 +1,28 @@
+{
+  "name": "remotejs",
+  "version": "1.0.0",
+  "description": "动态下发前端资源",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bibidu/remotejs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bibidu/remotejs/issues"
+  },
+  "homepage": "https://github.com/bibidu/remotejs#readme",
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
