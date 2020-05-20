@@ -1,16 +1,18 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const resolve = dir => path.resolve(__dirname, dir)
 
 module.exports = {
   mode: 'development',
-  entry: path.join(__dirname, 'src/main.js'),
+  entry: path.join(__dirname, 'src/index.js'),
   output: {
     filename: 'index.js',
-    path: path.join(__dirname, '../dist/funcBar.js')
+    path: path.join(__dirname, '../dist/basicApp.js')
   },
   resolve: {
     alias: {
-      '@remotejs': resolve('../../dist/remote.js')
+      '@remotejs': resolve('../../dist/remote.js'),
+      '@remoteConfig': resolve('./src/remote.json')
     }
   },
   module: {
@@ -52,5 +54,15 @@ module.exports = {
         ]
       }
     ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'index.html'
+    })
+  ],
+  devServer: {
+    port: 4000,
+    hot: true,
+    open: true,
   }
 }

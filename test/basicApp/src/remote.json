@@ -1,0 +1,9 @@
+{
+  "baseUrl": "http://localhost:3999",
+  "resourceMap": {
+    "funcBar": {
+      "url": "/static/funcBar/index.js",
+      "targetSelector": ".func-bar-container"
+    }
+  }
+}

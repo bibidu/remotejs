@@ -1,2 +1,7 @@
-window.remoteFetch = exports.fetch = require('./fetch').default
-window.remoteEventbus = exports.eventbus = require('./eventbus')
+import * as eventbus from './eventbus'
+import { default as fetch } from './fetch'
+
+export default {
+  eventbus,
+  fetch,
+}
