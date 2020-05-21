@@ -1,34 +1,30 @@
 import React, { useState } from 'react'
 import './index.scss'
-import * as remotejs from '@remotejs'
-console.log(`remotejs`, remotejs)
-const handler = (e, setMsg) => {
+import remotejs from '@remotejs'
+
+const logChatMessage = (e) => {
   const { type, value } = e.detail
-  console.log(e.detail)
-  if (type === 'checkedTab') {
-    setMsg(`设置的下标 ${value}`)
-  }
+  console.log(type, value)
 }
 
-function toggleListener(nextState, setMsg) {
+function toggleListener(nextState) {
   if (nextState) {
-    remotejs.eventbus.on('funcBar', (e) => handler(e, setMsg))
+    remotejs.eventbus.on('funcBar', logChatMessage)
   } else {
-    remotejs.eventbus.un('funcBar', handler)
+    remotejs.eventbus.un('funcBar', logChatMessage)
   }
 }
 
 export default function List() {
-  const [msg, setMsg] = useState('')
   const [count, setCount] = useState(0)
   const [startedListener, toggleListenerState] = useState(false)
 
   return (
     <div onClick={() => setCount(count + 1)}>
-      basicApp的List组件 {msg}
+      basicApp的List组件
       <button onClick={() => {
         const nextState = !startedListener
-        toggleListener(nextState, setMsg)
+        toggleListener(nextState)
         toggleListenerState(nextState)
       }}>{startedListener ? '关闭' : '开启'}监听</button>
     </div>

@@ -15,7 +15,7 @@ class App extends React.Component {
       value: this.state.list[idx],
     })
     this.setState({
-      checkdIndex: idx
+      checkdIndex: idx,
     })
   }
 

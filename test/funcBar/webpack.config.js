@@ -6,7 +6,7 @@ module.exports = {
   entry: path.join(__dirname, 'src/main.js'),
   output: {
     filename: 'index.js',
-    path: path.join(__dirname, '../dist/funcBar.js')
+    path: path.join(__dirname, '../server/static/funcBar')
   },
   resolve: {
     alias: {
@@ -35,7 +35,7 @@ module.exports = {
             ]
           }
         },
-        exclude: /node_modules/
+        exclude: /(node_modules|dist)/
       },
       {
         test: /\.scss$/,
