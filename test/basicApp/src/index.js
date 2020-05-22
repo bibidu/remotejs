@@ -12,17 +12,10 @@ class App extends React.Component {
   }
 
   render() {
-    return (
-      <div className="remotejs-container">
-        <div className="func-bar-container">
-          func-bar
-        </div>
-        <div className="list-container">
-          <List />
-        </div>
-      </div>
-    )
+    return null
   }
 }
 
-ReactDOM.render(<App />, document.querySelector('#app'))
+// 基座应用可渲染 亦可不渲染，只作为子应用的加载器
+const basicElement = document.querySelector('#basic-entry')
+basicElement && ReactDOM.render(<App />, basicElement)

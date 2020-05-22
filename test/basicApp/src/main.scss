@@ -1,11 +1,10 @@
-.func-bar-container{
-  padding: 20px 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 30px;
-}
-.list-container{
-  padding: 20px 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+#remotejs-app{
+  #left-nav{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 310px;
+    box-shadow: 0 30px 50px 0 rgba(1, 1, 1, .2);
+  }
 }
